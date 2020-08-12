@@ -1,0 +1,406 @@
+#map {
+    height: 100%;
+    z-index: -2;
+    -webkit-animation: 1s mapAnim 7s;
+            animation: 1s mapAnim 7s;
+}
+
+@-webkit-keyframes mapAnim {
+
+}
+
+@keyframes mapAnim {
+  0% {
+    z-index: -2;
+  }
+  100% {
+    z-index: 1;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+  
+/* コンテキストメニュー */
+.contextMenu {
+  background-color: rgb(39, 45, 52);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #f3f3f4;
+  margin: 1px;  /* Please note that this margin is necessary otherwise browser will open its own context menu */
+}
+
+.contextMenu ul {
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+}
+
+.contextMenu li {
+  padding: 0;
+}
+
+.contextMenu li:hover {
+  background-color: rgba(255, 255, 255, 0.3)
+}
+
+.contextMenu li div {
+  padding: 4px 30px 4px 10px;
+  font-size: 15px;
+}
+
+/* コンテキストメニュー　アイコン */
+.contextMenu li:nth-child(1) div::before {
+  content: '\f3c5';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 15px;
+  padding-right : 5px;    /*文字との隙間*/
+  color: #4788d9;       /*アイコンの色*/
+}
+.contextMenu li:nth-child(3) div::before {
+  content: '\f5ee';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 15px;
+  padding-right : 5px;    /*文字との隙間*/
+  color: #4788d9;       /*アイコンの色*/
+}
+.contextMenu li:nth-child(4) div::before {
+  content: '\f111';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  font-size: 15px;
+  padding-right : 5px;      /*文字との隙間*/
+  color: #4788d9;         /*アイコンの色*/
+}
+.contextMenu hr {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+/* モーダルウィンドウ*/
+.modal {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.modal__bg {
+  background: rgba(0,0,0,0.8);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+.modal__content {
+  background: #fff;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
+}
+.modal__content {
+  padding: 40px;
+}
+.modal__inner .js-modal-close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  border-radius: 0;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  color: #95979c;
+  background: transparent;
+  outline: 0;
+}
+.modal__inner .js-modal-close::before {
+  font-size: 25px;
+  line-height: 35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 35px;
+  content: "\00d7";
+  text-align: center;
+}
+
+/* 警告モーダルウィンドウ */
+.swal-overlay--show-modal .swal-modal {
+  background-color: rgb(39, 45, 52);
+}
+.swal-modal .swal-title {
+  color: #f3f3f4;
+}
+.swal-modal .swal-text {
+  color: #f3f3f4;
+}
+.swal-button-container .swal-button {
+  background-color: #4788d9;
+  
+}
+.swal-button-container .swal-button:focus {
+  box-shadow: none;
+}
+.swal-button-container .swal-button:hover {
+  background-color: #4c9cfc;
+}
+
+
+/* ロゴアニメーション */
+.svgall {
+  width: 500px;
+  height: 430px;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  animation-delay: 6.6s;
+  animation-name: dispAnim;
+  animation-duration: 2.8s;
+}
+
+path.st1 {
+  stroke-dasharray: 732, 734;
+  stroke-dashoffset: 733;
+  -webkit-animation: 2.8s pathAnim 1.1s;
+          animation: 2.8s pathAnim 1.1s;
+}
+
+@-webkit-keyframes pathAnim {
+  0% {
+    stroke-dashoffset: 733;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes pathAnim {
+  0% {
+    stroke-dashoffset: 733;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes dispAnim {
+
+}
+
+@keyframes dispAnim {
+  0% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+
+
+/* シャッターアニメーション */
+.shutter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1e1e1e;
+  z-index: -1;
+  -webkit-animation: byeShutter 5.2s forwards;
+          animation: byeShutter 5.2s forwards;
+}
+.shutter::before, .shutter::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+.shutter::before {
+  background-color: #b5a58b;
+  width: 0;
+  height: 1px;
+  -webkit-animation: shutterOpen1 5.2s forwards;
+          animation: shutterOpen1 5.2s forwards;
+}
+.shutter::after {
+  width: 120%;
+  height: 0;
+  margin-left: -10%;
+  background-color: #f3f3f3;
+  -webkit-animation: shutterOpen2 5.2s forwards;
+          animation: shutterOpen2 5.2s forwards;
+}
+
+/* マップ表示の傾くアニメーション停止 -2020/7/19 Y.Tsutsui */
+/* #map {
+  -webkit-animation: contentScale 2.6s forwards;
+          animation: contentScale 2.6s forwards;
+} */
+
+@-webkit-keyframes byeShutter {
+
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
+}
+@keyframes byeShutter {
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
+}
+
+@-webkit-keyframes shutterOpen1 {
+  0% {
+    width: 0;
+    height: 1px;
+  }
+  10% {
+    width: 100%;
+    height: 1px;
+  }
+  20% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+@keyframes shutterOpen1 {
+  0% {
+    width: 0;
+    height: 1px;
+  }
+  20% {
+    width: 100%;
+    height: 1px;
+  }
+  60% {
+      width: 100%;
+      height: 1px;
+    }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes shutterOpen2 {
+  60% {
+    width: 120%;
+    height: 0;
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  90% {
+    width: 120%;
+    height: 100%;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  100% {
+    width: 120%;
+    height: 100%;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+@keyframes shutterOpen2 {
+  70% {
+    width: 120%;
+    height: 0;
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  90% {
+    width: 120%;
+    height: 100%;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  100% {
+    width: 120%;
+    height: 100%;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+@-webkit-keyframes contentScale {
+  70% {
+    -webkit-transform: perspective(800px) scale(0.9) rotateX(15deg);
+            transform: perspective(800px) scale(0.9) rotateX(15deg);
+  }
+  100% {
+    -webkit-transform: perspective(800px) scale(1) rotateX(0);
+            transform: perspective(800px) scale(1) rotateX(0);
+  }
+}
+@keyframes contentScale {
+  80% {
+    -webkit-transform: perspective(800px) scale(0.9) rotateX(15deg);
+            transform: perspective(800px) scale(0.9) rotateX(15deg);
+  }
+  100% {
+    -webkit-transform: perspective(800px) scale(1) rotateX(0);
+            transform: perspective(800px) scale(1) rotateX(0);
+  }
+}
+
+/* スクロールバー非表示 */
+body {
+  height: 100%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+  scrollbar-width: none;       /* Firefox 対応 */
+}
+body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
+}
